@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="c:\Users\93\Downloads\00f25de73ef34787d4849231f29dc83f (1).png" alt="">
+    <h1>Регистрация</h1>
+    <div class="form-container"><h1>Введите Имя и Фамилию</h1>
+    <form onsubmit="event.preventDefault(); submitForm();">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" required>
+        <br>
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" required>
+        <br>
+        <button type="submit">Отправить</button>
+    </form></div>
+   
+    <script>
+          function submitForm() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            if (firstName && lastName) {
+                const newUrl = `result.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}`;
+                window.location.href = newUrl;
+            } else {
+                alert('Пожалуйста, заполните все поля.');
+            }
+        }
+    </script>
+</body>
+</html>
